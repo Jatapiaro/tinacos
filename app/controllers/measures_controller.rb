@@ -30,7 +30,7 @@ class MeasuresController < ApplicationController
     @measure.container = @container
     volume = Math::PI * @measure.container.radius * @measure.container.radius * (@measure.height/100)
     volume *= 1000
-    @measure.water_quantity = volume.round(2)
+    @measure.water_quantity = (@measure.container.volume - volume).round(2)
 
     respond_to do |format|
       if @measure.save
