@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420052042) do
+ActiveRecord::Schema.define(version: 20170420060422) do
 
   create_table "containers", force: :cascade do |t|
     t.string   "name"
     t.decimal  "radius"
     t.decimal  "height"
-    t.decimal  "volume"
+    t.decimal  "volume" 
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "measures", force: :cascade do |t|
+    t.integer  "container_id"
+    t.decimal  "height"
+    t.decimal  "water_quantity"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["container_id"], name: "index_measures_on_container_id"
   end
 
 end

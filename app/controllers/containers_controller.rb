@@ -27,7 +27,8 @@ class ContainersController < ApplicationController
 
     @container = Container.new(container_params)
 
-    @container.volume = Math::PI * @container.radius * @container.radius * @container.height
+    @container.volume = (Math::PI * @container.radius * @container.radius * @container.height).round(2)
+
 
     respond_to do |format|
       if @container.save

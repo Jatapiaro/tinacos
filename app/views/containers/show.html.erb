@@ -25,6 +25,19 @@
   <%= @container.created_at %>
 </p>
 
+<div class="field">
+
+  <h3>Mediciones</h3>
+  <ul>
+    <% @container.measures.each do |measure| %>
+    <li>
+      Cantidad de agua: <%= measure.water_quantity %> litros ------- [Medido el: <%= measure.created_at %>]
+    </li> 
+    <% end %>
+  </ul>
+  
+</div>
+
 
 
 <%= link_to 'Edit', edit_container_path(@container) %> |

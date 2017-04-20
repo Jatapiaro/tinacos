@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  container: one
+  height: 9.99
+  water_quantity: 9.99
+
+two:
+  container: two
+  height: 9.99
+  water_quantity: 9.99
