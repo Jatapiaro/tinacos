@@ -27,7 +27,7 @@ class ContainersController < ApplicationController
 
     @container = Container.new(container_params)
 
-    @container.volume = (Math::PI * @container.radius * @container.radius * @container.height).round(2)
+    @container.volume = (Math::PI * @container.radius * @container.radius * @container.height * 1000).round(2)
 
 
     respond_to do |format|
@@ -47,7 +47,7 @@ class ContainersController < ApplicationController
 
     respond_to do |format|
       if @container.update(container_params)
-        @container.volume = Math::PI * @container.radius * @container.radius * @container.height
+        @container.volume = (Math::PI * @container.radius * @container.radius * @container.height * 1000).round(2)
         @container.save
         format.html { redirect_to @container, notice: 'Container was successfully updated.' }
         format.json { render :show, status: :ok, location: @container }
