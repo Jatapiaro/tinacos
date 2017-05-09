@@ -9,6 +9,6 @@
 <%= line_chart @measures.group_by_day_of_month(:created_at, range: 0.month.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)",format: "%b %-e").average(:water_quantity), discrete: true %>
 
 <h4>Promedio de agua por mes en el año</h4>
-<%= line_chart @measures.group_by_month(:created_at, range: 0.year.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)").average(:water_quantity), discrete: true %>
+<%= column_chart @measures.group_by_month(:created_at, range: 0.year.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)").average(:water_quantity), discrete: true %>
 
 
