@@ -5,4 +5,4 @@
 Hola
 
 
-<%= line_chart @measures.group_by_day(:created_at, range: 0.weeks.ago.midnight..Time.now).sum(:water_quantity) %>
+<%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now).sum(:water_quantity) %>
