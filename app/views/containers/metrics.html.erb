@@ -5,4 +5,4 @@
 Hola
 
 
-<%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Pacific Time (US & Canada)").sum(:water_quantity) %>
+<%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)").sum(:water_quantity) %>
