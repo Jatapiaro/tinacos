@@ -11,20 +11,5 @@
 <h4>Promedio de agua por mes en el año</h4>
 <%= column_chart @measures.group_by_month(:created_at, range: 0.year.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%b %Y").average(:water_quantity), discrete: true %>
 
-      <table>
-        <thead>
-          <tr>
-              <th>Cantidad de agua</th>
-              <th>Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-        	<% @measures.each do |measure| %>
-        		<td>measure.water_quantity</td>
-        		<td>measure.created_at</td>
-        	<% end %>
-        </tbody>
-      </table>
-
 
 
