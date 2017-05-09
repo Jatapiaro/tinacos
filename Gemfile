@@ -42,6 +42,9 @@ gem 'execjs'
 gem "d3-rails"
 gem "chartkick"
 gem "groupdate"
+gem "wice_grid", '3.6.0.pre4'
+gem 'font-awesome-sass',  '~> 4.3'
+gem "smart_listing"
 #gem 'pg'
 
 group :development, :test do
