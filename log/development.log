@@ -10263,3 +10263,138 @@ Processing by ContainersController#index as HTML
 Completed 200 OK in 3722ms (Views: 3720.1ms | ActiveRecord: 0.1ms)
 
 
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "Rack::Cors" => Rack::Cors
+
+ (called from <top (required)> at /Users/jacobotapia/Desktop/tinacos/config/environment.rb:5)
+Started GET "/users/sign" for ::1 at 2017-05-08 23:02:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+rack-cors (0.4.1) lib/rack/cors.rb:81:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered collection of /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [15 times] (18.6ms)
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (67.3ms)
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (71.6ms)
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (579.4ms)
+Started GET "/" for ::1 at 2017-05-08 23:04:35 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1203ms (Views: 1195.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/containers/1" for ::1 at 2017-05-08 23:04:44 -0500
+Processing by ContainersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContainer Load (0.5ms)[0m  [1m[34mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 46ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Container with 'id'=1):
+  
+app/controllers/containers_controller.rb:78:in `set_container'
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (20.5ms)
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (312.1ms)
+Started GET "/containers" for ::1 at 2017-05-08 23:04:50 -0500
+Processing by ContainersController#index as HTML
+  Rendering containers/index.html.erb within layouts/application
+  [1m[36mContainer Load (0.3ms)[0m  [1m[34mSELECT "containers".* FROM "containers"[0m
+  Rendered containers/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 471ms (Views: 465.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/containers/new" for ::1 at 2017-05-08 23:04:53 -0500
+Processing by ContainersController#new as HTML
+  Rendering containers/new.html.erb within layouts/application
+  Rendered containers/_form.html.erb (117.2ms)
+  Rendered containers/new.html.erb within layouts/application (122.3ms)
+Completed 200 OK in 501ms (Views: 472.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/containers" for ::1 at 2017-05-08 23:04:56 -0500
+Processing by ContainersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b324uBr0y6NNCvxF/BPV5Eb+RKL5MyGjiAhfdQu2BcZwi1H7v6uUyly9uwWzQXuP3EH2xV0Ol5AI6A/fWD5JHg==", "container"=>{"name"=>"2344", "radius"=>"32432", "height"=>"234"}, "commit"=>"Create Container"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "containers" ("name", "radius", "height", "volume", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "2344"], ["radius", 0.32432e5], ["height", 0.234e3], ["volume", 0.77323800704664903e15], ["created_at", 2017-05-09 04:04:56 UTC], ["updated_at", 2017-05-09 04:04:56 UTC]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/containers/1
+Completed 302 Found in 13ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/containers/1" for ::1 at 2017-05-08 23:04:57 -0500
+Processing by ContainersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContainer Load (0.2ms)[0m  [1m[34mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering containers/show.html.erb within layouts/application
+  [1m[36mMeasure Load (0.4ms)[0m  [1m[34mSELECT "measures".* FROM "measures" WHERE "measures"."container_id" = ?[0m  [["container_id", 1]]
+  Rendered containers/show.html.erb within layouts/application (90.1ms)
+Completed 200 OK in 491ms (Views: 481.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/containers/1/metrics" for ::1 at 2017-05-08 23:05:00 -0500
+Processing by ContainersController#metrics as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContainer Load (0.2ms)[0m  [1m[34mSELECT  "containers".* FROM "containers" WHERE "containers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering containers/metrics.html.erb within layouts/application
+  Rendered containers/metrics.html.erb within layouts/application (39.9ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Time zones not supported for SQLite):
+    1: 
+    2: <h4>Promedio de agua el día de hoy</h4>
+    3: <%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)", format: "%-l %P").average(:water_quantity), discrete: true, xtitle: "Hora", ytitle: "Litros"%>
+    4: 
+    5: <h4>Promedio de agua esta semana</h4>
+    6: <%= column_chart @measures.group_by_day_of_week(:created_at, range: 0.weeks.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%a").average(:water_quantity),discrete: true, xtitle: "Día de la semana", ytitle: "Litros"%>
+  
+app/views/containers/metrics.html.erb:3:in `_app_views_containers_metrics_html_erb___3476496337018960570_70204585876920'
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.7ms)
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/jacobotapia/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (189.8ms)
