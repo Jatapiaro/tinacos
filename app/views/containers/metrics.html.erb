@@ -3,13 +3,16 @@
 <%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)", format: "%-l %P").average(:water_quantity), discrete: true, xtitle: "Hora", ytitle: "Litros"%>
 
 <h4>Promedio de agua esta semana</h4>
-<%= column_chart @measures.group_by_day_of_week(:created_at, range: 0.weeks.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%a").average(:water_quantity),discrete: true, xtitle: "Hora", ytitle: "Litros"%>
+<%= column_chart @measures.group_by_day_of_week(:created_at, range: 0.weeks.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%a").average(:water_quantity),discrete: true, xtitle: "Día de la semana", ytitle: "Litros"%>
 
 <h4>Promedio de agua en el mes</h4>
-<%= line_chart @measures.group_by_day_of_month(:created_at, range: 0.month.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)",format: "%b %-e").average(:water_quantity), discrete: true, xtitle: "Hora", ytitle: "Litros" %>
+<%= line_chart @measures.group_by_day_of_month(:created_at, range: 0.month.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)",format: "%b %-e").average(:water_quantity), discrete: true, xtitle: "Día del mes", ytitle: "Litros" %>
+
+<h4>Promedio de agua en el mes por dia</h4>
+<%= line_chart @measures.group_by_day_of_month(:created_at, range: 4.month.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)",format: "%a").average(:water_quantity), discrete: true, xtitle: "Día de la semana", ytitle: "Litros" %>
 
 <h4>Promedio de agua por mes en el año</h4>
-<%= column_chart @measures.group_by_month(:created_at, range: 0.year.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%b %Y").average(:water_quantity), discrete: true, xtitle: "Hora", ytitle: "Litros" %>
+<%= column_chart @measures.group_by_month(:created_at, range: 0.year.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%b %Y").average(:water_quantity), discrete: true, xtitle: "Mes", ytitle: "Litros" %>
 
 
 
