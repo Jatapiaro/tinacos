@@ -1,8 +1,8 @@
-<!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/1.0.0/vega.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartkick/2.2.3/chartkick.min.js"></script>-->
 
-<h4>Cantidad de agua al día (hoy)</h4>
+<h4>Promedio de agua el día de hoy</h4>
 <%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)").average(:water_quantity) %>
+
+<h4>Promedio de agua esta semana</h4>
+<%= column_chart @measures.group_by_day(:created_at, range: 0.weeks.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)").average(:water_quantity) %>
 
 
