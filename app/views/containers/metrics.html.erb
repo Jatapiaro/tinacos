@@ -4,4 +4,4 @@
 
 Hola
 
-<%= line_chart @measures.group_by_day(:created_at).sum(:water_quantity) %>
+<%= line_chart @measures.group_by_day(:created_at) %>
