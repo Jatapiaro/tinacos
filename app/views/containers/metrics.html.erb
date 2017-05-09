@@ -3,5 +3,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartkick/2.2.3/chartkick.min.js"></script>-->
 
 <h4>Cantidad de agua al día (hoy)</h4>
-<%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)").average(:water_quantity) %>
+<%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)").count(:water_quantity) %>
 
