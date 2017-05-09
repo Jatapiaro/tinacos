@@ -1,11 +1,14 @@
 
 <h4>Promedio de agua el día de hoy</h4>
-<%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)", format: "%-l %P").average(:water_quantity) %>
+<%= line_chart @measures.group_by_hour_of_day(:created_at, range: 0.weeks.ago.midnight..Time.now, time_zone: "Central Time (US & Canada)", format: "%-l %P").average(:water_quantity), discrete: true%>
 
 <h4>Promedio de agua esta semana</h4>
-<%= column_chart @measures.group_by_day_of_week(:created_at, range: 0.weeks.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%a").average(:water_quantity) %>
+<%= column_chart @measures.group_by_day_of_week(:created_at, range: 0.weeks.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)", format: "%a").average(:water_quantity),discrete: true%>
 
 <h4>Promedio de agua en el mes</h4>
+<%= line_chart @measures.group_by_day_of_month(:created_at, range: 0.month.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)",format: "%b %-e").average(:water_quantity), discrete: true %>
+
+<h4>Promedio de agua por mes en el año</h4>
 <%= line_chart @measures.group_by_day_of_month(:created_at, range: 0.month.ago.midnight..Time.now,time_zone: "Central Time (US & Canada)",format: "%b %-e").average(:water_quantity), discrete: true %>
 
 
