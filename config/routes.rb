@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :containers do
   	resources :measures, only: [:create,:destroy,:update,:show]
   end
+  get 'containers/:id/metrics', to: "containers#metrics"
 
 end

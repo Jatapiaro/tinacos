@@ -36,6 +36,13 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'materialize-sass'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rails-data-explorer'
+gem 'therubyracer', '~> 0.12.2'
+gem 'execjs'
+gem "d3-rails"
+gem "chartkick"
+gem "groupdate"
+#gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,6 +52,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'sqlite3'
+  #gem 'pg'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

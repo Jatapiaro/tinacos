@@ -1,5 +1,5 @@
 class ContainersController < ApplicationController
-  before_action :set_container, only: [:show, :edit, :update, :destroy]
+  before_action :set_container, only: [:show, :edit, :update, :destroy, :metrics]
 
   # GET /containers
   # GET /containers.json
@@ -19,6 +19,10 @@ class ContainersController < ApplicationController
 
   # GET /containers/1/edit
   def edit
+  end
+
+  def metrics
+    @measures = @container.measures
   end
 
   # POST /containers

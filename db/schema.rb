@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170420060422) do
     t.string   "name"
     t.decimal  "radius"
     t.decimal  "height"
-    t.decimal  "volume" 
+    t.decimal  "volume"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
